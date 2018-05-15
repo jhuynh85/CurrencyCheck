@@ -4,9 +4,8 @@
 
 // Dependencies
 // =============================================================
-const express = require("express");
-const bodyParser = require("body-parser");
-const methodOverride = require("method-override");
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // Sets up the Express App
 // =============================================================
@@ -17,18 +16,18 @@ const PORT = process.env.PORT || 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 // Static directory
-app.use(express.static("app/public"));
+app.use(express.static('app/public'));
 
 // Routes
 // =============================================================
-// require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+require('./app/routes/api-routes.js')(app);
+require('./app/routes/html-routes.js')(app);
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+app.listen(PORT, () => {
+  console.log(`App listening on PORT ${PORT}`);
 });

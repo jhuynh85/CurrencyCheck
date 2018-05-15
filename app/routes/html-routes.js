@@ -4,16 +4,15 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
+const path = require('path');
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = (app) => {
+  // Each of the below routes just handles the HTML page that the user gets sent to.
 
-    // Each of the below routes just handles the HTML page that the user gets sent to.
-
-    // add code to send the main.html file
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/main.html"));
-    });
+  // add code to send the main.html file
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/main.html'));
+  });
 };

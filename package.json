@@ -1,0 +1,24 @@
+{
+  "name": "currency-check",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/jhuynh85/CurrencyCheck.git",
+  "author": "Joseph Huynh <joe.huynh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "firebase": "^5.0.2",
+    "node-schedule": "^1.3.0",
+    "nodemailer": "^4.6.4",
+    "puppeteer": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.11.0"
+  }
+}
