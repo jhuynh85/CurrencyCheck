@@ -9,6 +9,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
     "firebase": "^5.0.2",
     "node-schedule": "^1.3.0",
     "nodemailer": "^4.6.4",
@@ -21,5 +22,10 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-html": "^4.0.3",
     "eslint-plugin-import": "^2.11.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*"
+    ]
   }
 }

@@ -6,8 +6,8 @@
 // =============================================================
 const express = require('express');
 const bodyParser = require('body-parser');
-const favicon = require('serve-favicon');
-const path = require('path');
+// const favicon = require('serve-favicon');
+// const path = require('path');
 
 // Sets up the Express App
 // =============================================================
@@ -20,16 +20,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-// Serve favicon
-// app.use(favicon(path.join(__dirname, 'app', 'public', 'favicon.ico')));
+// Setup Handlebars
+const exphbs = require('express-handlebars');
+
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+}));
+app.set('view engine', 'handlebars');
 
 // Static directory
-app.use(express.static('app/public'));
+app.use(express.static('public'));
 
 // Routes
 // =============================================================
-require('./app/routes/api-routes.js')(app);
-require('./app/routes/html-routes.js')(app);
+require('./routes/api-routes.js')(app);
+require('./routes/html-routes.js')(app);
 
 // Starts the server to begin listening
 // =============================================================
