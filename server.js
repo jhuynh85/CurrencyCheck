@@ -6,6 +6,8 @@
 // =============================================================
 const express = require('express');
 const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const path = require('path');
 
 // Sets up the Express App
 // =============================================================
@@ -17,6 +19,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+// Serve favicon
+// app.use(favicon(path.join(__dirname, 'app', 'public', 'favicon.ico')));
 
 // Static directory
 app.use(express.static('app/public'));
