@@ -6,8 +6,16 @@
 // =============================================================
 // let Book = require('../models/book.js');
 const puppeteer = require('puppeteer');
+const firebase = require('firebase');
+const firebaseConfig = require('../public/js/firebase-config');
 
-// BoA site constants
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+const db = firebase.database();
+
+// BoA selectors
 const ADD_CURRENCY_LINK = 'body > div.fsd-layout.fsd-2c-700lt-layout > div > div > div.columns > div.flex-col.lt-col > div.currency-fc-aps-dp-module.v-exchange > div > form > div.currency-calc-actions > a';
 const CURRENCY_DROPDOWN = '#currency-calc-add-modal > select';
 const CONFIRM_ADD_CURRENCY = '#currency-calc-add-modal > button';
@@ -18,9 +26,10 @@ module.exports = (app) => {
   // Navigates to BoA site and gets exchange rate (to USD) of a specific currency
   app.post('/api/currency', (req, res) => {
     const rates = [];
-    const { watchList } = req.body;
-    console.log(watchList);
     (async () => {
+      const snapshot = await db.ref('watchList').once('value');
+      const watchList = snapshot.val();
+      console.log('Firebase watchlist: ', watchList);
       const browser = await puppeteer.launch({ headless: true });
       const page = await browser.newPage();
       await page.goto('https://www.bankofamerica.com/foreign-exchange/exchange-rates.go');
