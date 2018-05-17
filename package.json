@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "repository": "https://github.com/jhuynh85/CurrencyCheck.git",
-  "author": "Joseph Huynh <joe.huynh@gmail.com>",
+  "author": "Joseph Huynh",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",

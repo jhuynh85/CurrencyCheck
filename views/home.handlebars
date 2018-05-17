@@ -15,42 +15,26 @@
 						<th scope="col">Exchange rate (USD)</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>CAD</td>
-						<td>Otto</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Larry</td>
-						<td>the Bird</td>
-					</tr>
+				<tbody id="watchlist-body">
 				</tbody>
 			</table>
-			<a href="#" class="btn btn-primary">Add currency</a>
-		</div>
-	</div>
-
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm">
-			CAD -> USD:
-		</div>
-		<div id="cad-rate" class="col-sm"></div>
-	</div>
-	<div class="row">
-		<div class="col-sm">
-			EUR -> USD:
-		</div>
-		<div class="col-sm">
-			$
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" id="currencyDropdown" data-toggle="dropdown" aria-haspopup="true"
+				 aria-expanded="false">
+					Add currency
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Abu Dhabi</a>
+					<a class="dropdown-item" href="#">Ajman</a>
+					<a class="dropdown-item" href="#">Andorra</a>
+					<a class="dropdown-item" href="#">Anguilla</a>
+					<a class="dropdown-item" href="#">Antigua & Barbuda</a>
+					<a class="dropdown-item" href="#">Australia</a>
+					<a class="dropdown-item" href="#">Austria</a>
+					<a class="dropdown-item" href="#">Azores</a>
+					<a class="dropdown-item" href="#">Bahrain</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
